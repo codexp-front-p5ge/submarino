@@ -1,21 +1,48 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import SectionProduct from "./components/SectionProduct/SectionProduct";
+import Note1 from "./img/note-1.png";
+import Note2 from "./img/note-2.png";
+import TV1 from "./img/tv-1.png";
+import TV2 from "./img/tv-2.png";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+var products = [
+  {
+    name: "Notebook",
+    price: 1745.20,
+    image: {
+      src: Note1,
+      alt: "Notebook"
+    }
+  },
+  {
+    name: "Notebook",
+    price: 2000.90,
+    image: {
+      src: Note2,
+      alt: "Notebook"
+    }
+  },
+  {
+    name: "TV",
+    price: 3745.20,
+    image: {
+      src: TV1,
+      alt: "Televisão"
+    }
+  },
+  {
+    name: "TV",
+    price: 2500.90,
+    image: {
+      src: TV2,
+      alt: "Televisão"
+    }
   }
-}
+];
 
-export default App;
+
+export default () => (
+  <div className="App">
+    <SectionProduct title="Produtos em promoção" products={products}/>
+  </div>
+);
